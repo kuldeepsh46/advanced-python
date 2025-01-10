@@ -3,6 +3,13 @@
 
 
 def myFunction(arg1, arg2=None):
+    """
+    myFunction(arg1, arg2=None) --> Do nothing
+    
+    Parameters:
+    arg1: the first argument
+    arg2: the second argument which is None by defualt.
+    """
     print(arg1, arg2)
 
 
