@@ -10,19 +10,22 @@ vals = [10, 20, 30, 40, 50, 40, 30, 25, 55, 45, 40, 30]
 
 # dropwhile and takewhile will return values until
 # a certain condition is met that stops them
-
+def testFn(val):
+    return val < 40
 
 # dropwhile() drops values until the predicate expression is True
-
+print(list(itertools.dropwhile(testFn, vals)))
 
 # takewhile() is the opposite of dropwhile() - it returns values from
 # the iterable while the predicate is True, then stops
-
+print(list(itertools.takewhile(testFn, vals)))
 
 # filterfalse() returns elements from the iterable for which the predicate
 # function returns False. 
+print(list(itertools.filterfalse(testFn, vals)))
 
-
+oddNo = list(itertools.filterfalse(lambda x:x%2 == 0, vals))
+print("isPrime:", oddNo    )
 # These functions can work on complex objects
 @dataclass
 class wcdata:
@@ -38,3 +41,5 @@ worldcupdata = [
     wcdata("Semifinal", 68294, "France" , "Morocco" , "2 -- 0" ),
     wcdata("Semifinal", 88966, "Argentina" , "Croatia" , "3 -- 0" ),
 ]
+result = itertools.filterfalse(lambda x: x.attendance < 80000, worldcupdata)
+pprint.pp(list(result))

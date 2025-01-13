@@ -13,7 +13,16 @@ def findname(target):
     print("Name not found")
     return False
 
-print(findname("Creed"))
-print(findname("Tom"))
+# print(findname("Creed"))
+# print(findname("Tom"))
 
 # Check if a number is prime
+def isPrime(num):
+    for i in range(2, num):
+        if num % i == 0:
+            print(num, "is not a prime no")
+            break
+    else:
+        print(num, 'is a prime no')
+isPrime(31)
+isPrime(10)
